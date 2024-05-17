@@ -1,0 +1,27 @@
+{
+  "name": "commitlint-config-harmony",
+  "version": "1.0.0",
+  "description": "harmony Git规范",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "harmony",
+    "commit",
+    "lint"
+  ],
+  "homepage": "https://github.com/luszz/harmony-spec#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luszz/harmony-spec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luszz/harmony-spec/issues"
+  },
+  "author": "luszz",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
+}

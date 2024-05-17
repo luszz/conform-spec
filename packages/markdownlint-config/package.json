@@ -1,0 +1,24 @@
+{
+  "name": "markdownlint-config-harmony",
+  "version": "1.0.0",
+  "description": "harmony 文档规范",
+  "main": "index.json",
+  "keywords": [
+    "harmony",
+    "markdown",
+    "lint"
+  ],
+  "homepage": "https://github.com/luszz/harmony-spec#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luszz/harmony-spec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luszz/harmony-spec/issues"
+  },
+  "author": "luszz",
+  "peerDependencies": {
+    "markdownlint": "^0.34.0"
+  }
+}
