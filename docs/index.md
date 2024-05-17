@@ -9,13 +9,13 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: /markdown-examples
+      link: /guide/getting-started
     - theme: alt
       text: 介绍
-      link: /api-examples
+      link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: /api-examples
+      link: 'https://github.com/luszz/harmony-spec'
 
 features:
   - title: ESLint
