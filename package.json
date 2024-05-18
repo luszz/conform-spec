@@ -9,7 +9,7 @@
     "prepare": "husky install ",
     "init": "pnpm install",
     "clean": "pnpm -r exec -- rm -rf node_modules && rm -rf node_modules",
-    "test": "pnpm -r test",
+    "test": "pnpm -r run test",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs: serve": "vitepress serve",

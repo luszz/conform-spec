@@ -1,0 +1,18 @@
+.foo {
+  color: #abc;
+}
+
+.selector5 {
+width: 0rem;
+
+color: #AAA;
+background: #aaaaaa;
+}
+
+#foo {
+color: #ccc;
+}
+
+/*comment */
+
+@unkown colorTag(#abc);

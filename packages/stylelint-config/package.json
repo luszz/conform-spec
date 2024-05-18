@@ -1,15 +1,15 @@
 {
-  "name": "markdownlint-config-harmony",
+  "name": "stylelint-config-harmony",
   "version": "1.0.0",
-  "description": "harmony 文档规范",
-  "main": "index.json",
+  "description": "harmony CSS规范",
+  "main": "index.js",
   "keywords": [
     "harmony",
-    "markdown",
+    "style",
     "lint"
   ],
   "scripts": {
-    "test": "echo 'No tests to run.'"
+    "test": "node --test"
   },
   "homepage": "https://github.com/luszz/harmony-spec#readme",
   "license": "ISC",
@@ -22,6 +22,14 @@
   },
   "author": "luszz",
   "peerDependencies": {
-    "markdownlint": "^0.34.0"
+    "stylelint": "^16.1.0",
+    "stylelint-scss": "^6.3.0"
+  },
+  "devDependencies": {
+    "stylelint": "^16.5.0",
+    "stylelint-scss": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=18.12.0"
   }
 }
