@@ -117,7 +117,7 @@ describe('Validate JS configs', () => {
     assert.notEqual(errorReportedByReactPlugin.length, 0);
   });
 
-  it('Validate eslint-config-encode/node', async () => {
+  it('Validate eslint-config-harmony/node', async () => {
     const configPath = './node.js';
     const filePath = path.join(__dirname, './fixtures/node.js');
 
