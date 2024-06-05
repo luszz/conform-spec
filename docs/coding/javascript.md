@@ -23,7 +23,7 @@ author:
 
 ### 1.1. 缩进
 
-- 1.1.1.【强制】使用 2 个空格缩进。`eslint`: [indent](https://eslint.org/docs/rules/indent)
+- 1.1.1.【强制】使用 2 个空格缩进。
 
   统一使用 2 个空格缩进，不要使用 4 个空格或 tab 缩进：
 
@@ -41,7 +41,7 @@ author:
 
 ### 1.2. 分号
 
-- 1.2.1.【强制】使用分号。`eslint`: [semi](https://eslint.org/docs/rules/semi)
+- 1.2.1.【强制】使用分号。
 
   统一以分号结束语句，可以避免 JS 引擎自动分号插入机制的怪异行为，在语义上也更加明确。
 
@@ -49,15 +49,15 @@ author:
 
   ```javascript
   // bad - 导致 Uncaught ReferenceError 报错
-  const chenghuai = {};
-  const huaicheng = {}[(chenghuai, huaicheng)].forEach((jedi) => {
+  const luszz = {};
+  const zzusl = {}[(luszz, zzusl)].forEach((jedi) => {
     jedi.father = 'vader';
   });
 
   // good
-  const chenghuai = {};
-  const huaicheng = {};
-  [chenghuai, huaicheng].forEach((jedi) => {
+  const luszz = {};
+  const zzusl = {};
+  [luszz, zzusl].forEach((jedi) => {
     jedi.father = 'vader';
   });
 
@@ -70,8 +70,8 @@ author:
 
   // bad - 函数将返回 `undefined` 而不是换行后的值
   function foo() {
-    return;
-    ('Result want to be returned');
+    return
+    ('Result want to be returned')
   }
 
   // good
@@ -82,20 +82,24 @@ author:
 
 ### 1.3. 逗号
 
-- 1.3.1.【强制】对于逗号分隔的多行结构，不使用行首逗号。`eslint`: [comma-style](https://eslint.org/docs/rules/comma-style)
+- 1.3.1.【强制】对于逗号分隔的多行结构，不使用行首逗号。
 
   ```javascript
   // bad
-  const story = [once, upon, aTime];
+  const story = [
+    once
+    ,upon 
+    ,aTime
+  ];
 
   // good
   const story = [once, upon, aTime];
 
   // bad
   const hero = {
-    firstName: 'Ada',
-    lastName: 'Lovelace',
-    superPower: 'computers',
+    firstName: 'Ada'
+    ,lastName: 'Lovelace'
+    ,superPower: 'computers'
   };
 
   // good
@@ -106,7 +110,7 @@ author:
   };
   ```
 
-- 1.3.2.【强制】对于逗号分隔的多行结构，始终加上最后一个逗号。`eslint`: [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
+- 1.3.2.【强制】对于逗号分隔的多行结构，始终加上最后一个逗号。
 
   这样可以使增删行更加容易，也会使 `git diffs` 更清晰。`Babel` 等编译器会在编译后的代码里帮我们去掉最后额外的逗号，因此不必担心在旧浏览器中的问题。
 
@@ -131,7 +135,7 @@ author:
   // bad
   const hero = {
     firstName: 'Dana',
-    lastName: 'Scully',
+    lastName: 'Scully'
   };
 
   const heroes = ['Batman', 'Superman'];
@@ -166,7 +170,7 @@ author:
 
 > 术语解释：**块（block）** 可以理解为类、函数、控制语句等由大括号 `{}` 分隔的代码块状结构，由一对大括号界定，用于组合若干条语句 [了解更多](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
 
-- 1.4.1【推荐】始终使用大括号包裹代码块。eslint: [curly](https://eslint.org/docs/rules/curly) [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)
+- 1.4.1【推荐】始终使用大括号包裹代码块。
 
   多行代码块必须用大括号包裹：
 
@@ -199,7 +203,7 @@ author:
 
 #### 1.4.2. 大括号换行风格
 
-- 1.4.2.1.【强制】对于非空代码块，采用 `Egyptian Brackets` 风格。eslint: [brace-style](https://eslint.org/docs/rules/brace-style)
+- 1.4.2.1.【强制】对于非空代码块，采用 `Egyptian Brackets` 风格。
 
   对于非空的代码块，大括号的换行方式采用 [Egyptian Brackets](https://blog.codinghorror.com/new-programming-jargon/) 风格，具体规则如下：
 
@@ -288,13 +292,13 @@ author:
 
 合理并一致地使用空格有助于提升代码的可读性和可维护性。具体来说，我们采用如下的空格风格：
 
-- 1.5.1.【强制】空格风格。`eslint`: [space-before-blocks](https://eslint.org/docs/rules/space-before-blocks) [keyword-spacing](https://eslint.org/docs/rules/keyword-spacing) [space-in-parens](https://eslint.org/docs/rules/space-in-parens) [array-bracket-spacing](https://eslint.org/docs/rules/array-bracket-spacing) [object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing) [space-infix-ops](https://eslint.org/docs/rules/space-infix-ops) [key-spacing](https://eslint.org/docs/rules/key-spacing)
+- 1.5.1.【强制】空格风格。
 
   块的左大括号 `{` 前有一个空格：
 
   ```javascript
   // bad
-  function test() {
+  function test(){
     console.log('test');
   }
 
@@ -304,9 +308,9 @@ author:
   }
 
   // bad
-  dog.set('attr', {
-    age: '1 year',
-    breed: 'Bernese Mountain Dog',
+  dog.set('attr',{
+    age:'1 year',
+    breed:'Bernese Mountain Dog',
   });
 
   // good
@@ -320,7 +324,7 @@ author:
 
   ```javascript
   // bad
-  if (isJedi) {
+  if(isJedi) {
     fight();
   }
 
@@ -334,7 +338,7 @@ author:
 
   ```javascript
   // bad
-  function fight() {
+  function fight () {
     console.log('Swooosh!');
   }
 
@@ -348,7 +352,7 @@ author:
 
   ```javascript
   // bad
-  function bar(foo) {
+  function bar( foo ) {
     return foo;
   }
 
@@ -358,7 +362,7 @@ author:
   }
 
   // bad
-  if (foo) {
+  if ( foo ) {
     console.log(foo);
   }
 
@@ -372,7 +376,7 @@ author:
 
   ```javascript
   // bad
-  const foo = [1, 2, 3];
+  const foo = [ 1, 2, 3 ];
   console.log(foo[0]);
 
   // good
@@ -384,7 +388,7 @@ author:
 
   ```javascript
   // bad
-  const foo = { clark: 'kent' };
+  const foo = {clark: 'kent'};
 
   // good
   const foo = { clark: 'kent' };
@@ -394,19 +398,19 @@ author:
 
   ```javascript
   // bad
-  const x = y + 5;
+  const x = y+5;
 
   // good
   const x = y + 5;
 
   // bad
-  const isRight = result === 0 ? false : true;
+  const isRight = result === 0?false:true;
 
   // good
   const isRight = result === 0 ? false : true;
 
   // bad - 一元运算符与操作对象间不应有空格
-  const x = !y;
+  const x = ! y;
 
   // good
   const x = !y;
@@ -436,7 +440,7 @@ author:
 
 ### 1.6. 空行
 
-- 1.6.1.【推荐】在文件末尾保留一行空行。`eslint`: [eol-last](https://eslint.org/docs/rules/eol-last)
+- 1.6.1.【推荐】在文件末尾保留一行空行。
 
   在非空文件中保留拖尾换行是一种常见的 `UNIX` 风格。它的好处同输出文件到终端一样，方便在串联和追加文件时不会打断 `shell` 的提示。
 
@@ -460,31 +464,17 @@ author:
   export default foo;↵
   ```
 
-- 1.6.2.【强制】块的开始和结束不能是空行。`eslint`: [padded-blocks](https://eslint.org/docs/rules/padded-blocks)
+- 1.6.2.【强制】块的开始和结束不能是空行。
 
   ```javascript
   // bad
-  function bar() {
-    console.log(foo);
+  if (a) {
+          b();
   }
 
   // good
-  function bar() {
-    console.log(foo);
-  }
-
-  // bad
-  if (baz) {
-    console.log(qux);
-  } else {
-    console.log(foo);
-  }
-
-  // good
-  if (baz) {
-    console.log(qux);
-  } else {
-    console.log(foo);
+  if (a) {
+      b();
   }
   ```
 
@@ -523,7 +513,7 @@ author:
 
 ### 1.7. 最大字符数和最大行数
 
-- 1.7.1.【推荐】单行最大字符数：100。`eslint`: [max-len](https://eslint.org/docs/rules/max-len)
+- 1.7.1.【推荐】单行最大字符数：100。
 
   过长的单行代码不易阅读和维护，需要进行合理换行。
 
@@ -535,11 +525,7 @@ author:
   ```javascript
   // bad
   const foo =
-    jsonData &&
-    jsonData.foo &&
-    jsonData.foo.bar &&
-    jsonData.foo.bar.baz &&
-    jsonData.foo.bar.baz.quux &&
+    jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux &&
     jsonData.foo.bar.baz.quux.xyzzy;
 
   // good

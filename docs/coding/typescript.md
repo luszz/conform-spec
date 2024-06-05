@@ -281,43 +281,6 @@ author:
   }
   ```
 
-- 【强制】`interface/type` 类型中使用一致的成员分隔符 `;` [@typescript-eslint/member-delimiter-style](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md)
-
-  ```typescript
-  // bad: comma style(JSON style)
-  interface Foo {
-    name: string;
-    greet(): void;
-  }
-
-  type Bar = {
-    name: string;
-    greet(): void;
-  };
-
-  // bad: line break style
-  interface Foo {
-    name: string;
-    greet(): void;
-  }
-
-  type Bar = {
-    name: string;
-    greet(): void;
-  };
-
-  // good
-  interface Foo {
-    name: string;
-    greet(): void;
-  }
-
-  type Bar = {
-    name: string;
-    greet(): void;
-  };
-  ```
-
 - 【推荐】类的成员应按照固定的先后顺序排列 [@typescript-eslint/member-ordering](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-ordering.md)
 
   1. 类的静态方法 / 属性（`static`）优先于实例的方法 / 属性（`instance`）
@@ -627,8 +590,8 @@ author:
   import myModule from './my-module';
   ```
 
-- 【强制】类型声明时应正确添加空格间距 [@typescript-eslint/type-annotation-spacing](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md)
-
+- 【强制】类型声明时应正确添加空格间距 
+  
   `TypeScript` 类型声明周围添加合适的间距可以有效的提升代码可读性，我们约定：
 
   1. 冒号前无空格，冒号后保留一个空格
