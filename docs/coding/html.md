@@ -6,7 +6,7 @@ tags:
   - 编码规范
 author:
   name: luszz
-  link: https://github.com/luszz/harmony-spec
+  link: https://github.com/luszz/conform-spec
 ---
 
 # HTML 编码规范
@@ -159,7 +159,7 @@ author:
   ```html
   <head>
     <meta charset="utf-8" />
-    <title>harmony-spec</title>
+    <title>conform-spec</title>
   </head>
   ```
 
@@ -173,7 +173,7 @@ author:
   <!DOCTYPE html>
   <html>
     <head>
-      <title>harmony-spec</title>
+      <title>conform-spec</title>
     </head>
     <body>
       <img src="images/company-logo.png" alt="Company" />
@@ -337,10 +337,10 @@ author:
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="harmony-spec" />
-    <meta name="keyword" content="harmony-spec" />
+    <meta name="description" content="conform-spec" />
+    <meta name="keyword" content="conform-spec" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, viewport-fit=cover" />
-    <title>harmony-spec</title>
+    <title>conform-spec</title>
     <link rel="stylesheet" href="example.css" />
   </head>
   <body>

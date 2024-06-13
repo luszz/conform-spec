@@ -1,4 +1,4 @@
-# eslint-plugin-harmony
+# eslint-plugin-conform
 
 ## 安装
 
@@ -7,15 +7,15 @@
 ::: code-group
 
 ```sh [npm]
-$ npm install eslint-plugin-harmony eslint --save-dev
+$ npm install eslint-plugin-conform eslint --save-dev
 ```
 
 ```sh [pnpm]
-$ pnpm add eslint-plugin-harmony eslint --save-dev
+$ pnpm add eslint-plugin-conform eslint --save-dev
 ```
 
 ```sh [yarn]
-$ yarn add eslint-plugin-harmony eslint --save-dev
+$ yarn add eslint-plugin-conform eslint --save-dev
 ```
 
 ## 使用
@@ -25,9 +25,9 @@ $ yarn add eslint-plugin-harmony eslint --save-dev
 ```js
 // .eslintrc.js
 module.exports = {
-  plugin: ['eslint-config-harmony'],
+  plugin: ['eslint-config-conform'],
   rules: {
-    'eslint-plugin-harmony/no-http-url': 'error',
+    'eslint-plugin-conform/no-http-url': 'error',
   },
 };
 ```
@@ -37,10 +37,10 @@ module.exports = {
 ```js
 // .eslintrc.js
 module.exports = {
-  extends: 'plugin:eslint-plugin-harmony/recommended',
+  extends: 'plugin:eslint-plugin-conform/recommended',
 };
 ```
 
 ## 支持的规则
 
-- [`no-http-url`](https://luszz.github.io/harmony-spec/npm/eslint-plugin.html) 使用 HTTPS 协议头的 URL，而不是 HTTP
+- [`no-http-url`](https://luszz.github.io/conform-spec/npm/eslint-plugin.html) 使用 HTTPS 协议头的 URL，而不是 HTTP

@@ -1,6 +1,6 @@
-# markdownlint-config-harmony
+# markdownlint-config-conform
 
-> harmony 文档 规范
+> conform 文档 规范
 
 支持配套的 [markdownlint 可共享配置](https://www.npmjs.com/package/markdownlint#optionsconfig)。
 
@@ -15,7 +15,7 @@ npm install -g markdownlint-cli
 再安装 [markdownlint](https://www.npmjs.com/package/markdownlint)：
 
 ```bash
-npm install markdownlint-config-harmony markdownlint --save-dev
+npm install markdownlint-config-conform markdownlint --save-dev
 ```
 
 ## 使用
@@ -24,6 +24,6 @@ npm install markdownlint-config-harmony markdownlint --save-dev
 
 ```json
 {
-  "extends": "markdownlint-config-harmony"
+  "extends": "markdownlint-config-conform"
 }
 ```

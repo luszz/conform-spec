@@ -6,7 +6,7 @@ tags:
   - 工程规范
 author:
   name: luszz
-  link: https://github.com/luszz/harmony-spec
+  link: https://github.com/luszz/conform-spec
 ---
 
 # CHANGELOG 规范

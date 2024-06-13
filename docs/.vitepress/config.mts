@@ -2,8 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Harmony Spec",
-  base: '/harmony-spec/',
+  title: "Conform Spec",
+  base: '/conform-spec/',
   description: "",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -28,16 +28,16 @@ export default defineConfig({
       {
         text: "NPM包",
         items: [
-          { text: "eslint-config-harmony", link: "/npm/eslint.md" },
-          { text: "stylelint-config-harmony", link: "/npm/stylelint.md" },
-          { text: "commitlint-config-harmony", link: "/npm/commitlint.md" },
-          { text: "markdownlint-config-harmony", link: "/npm/markdownlint.md" },
-          { text: "eslint-plugin-harmony", link: "/npm/eslint-plugin.md" },
+          { text: "eslint-config-conform", link: "/npm/eslint.md" },
+          { text: "stylelint-config-conform", link: "/npm/stylelint.md" },
+          { text: "commitlint-config-conform", link: "/npm/commitlint.md" },
+          { text: "markdownlint-config-conform", link: "/npm/markdownlint.md" },
+          { text: "eslint-plugin-conform", link: "/npm/eslint-plugin.md" },
         ],
       },
       {
         text: "脚手架",
-        items: [{ text: "harmony-spec-lint", link: "/cli/harmony-spec-lint.md" }],
+        items: [{ text: "conform-spec-lint", link: "/cli/conform-spec-lint.md" }],
       },
     ],
 
@@ -77,23 +77,23 @@ export default defineConfig({
       {
         text: "NPM包",
         items: [
-          { text: "eslint-config-harmony", link: "/npm/eslint.md" },
-          { text: "stylelint-config-harmony", link: "/npm/stylelint.md" },
-          { text: "commitlint-config-harmony", link: "/npm/commitlint.md" },
-          { text: "markdownlint-config-harmony", link: "/npm/markdownlint.md" },
-          { text: "eslint-plugin-harmony", link: "/npm/eslint-plugin.md" },
+          { text: "eslint-config-conform", link: "/npm/eslint.md" },
+          { text: "stylelint-config-conform", link: "/npm/stylelint.md" },
+          { text: "commitlint-config-conform", link: "/npm/commitlint.md" },
+          { text: "markdownlint-config-conform", link: "/npm/markdownlint.md" },
+          { text: "eslint-plugin-conform", link: "/npm/eslint-plugin.md" },
         ],
         collapsed: true,
       },
       {
         text: "脚手架",
-        items: [{ text: 'harmony-spec-lint', link: '/cli/harmony-spec-lint.md' }],
+        items: [{ text: 'conform-spec-lint', link: '/cli/conform-spec-lint.md' }],
         collapsed: true,
       },
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/luszz/harmony-spec" },
+      { icon: "github", link: "https://github.com/luszz/conform-spec" },
     ],
   },
 });

@@ -6,7 +6,7 @@ tags:
   - 编码规范
 author:
   name: luszz
-  link: https://github.com/luszz/harmony-spec
+  link: https://github.com/luszz/conform-spec
 ---
 
 # TypeScript 编码规范

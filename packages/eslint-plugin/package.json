@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-harmony",
+  "name": "eslint-plugin-conform",
   "version": "1.0.0",
-  "description": "harmony 自定义eslint插件",
+  "description": "conform 自定义eslint插件",
   "scripts": {
     "test": "jest",
     "prepublishOnly": "npm run test"
@@ -12,20 +12,20 @@
     "README.md"
   ],
   "keywords": [
-    "harmony",
+    "conform",
     "eslint",
     "eslint-plugin"
   ],
   "main": "src/index.js",
   "author": "luszz",
-  "homepage": "https://github.com/luszz/harmony-spec#readme",
+  "homepage": "https://github.com/luszz/conform-spec#readme",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luszz/harmony-spec.git"
+    "url": "git+https://github.com/luszz/conform-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/luszz/harmony-spec/issues"
+    "url": "https://github.com/luszz/conform-spec/issues"
   },
   "dependencies": {
     "fs-extra": "^9.0.1",

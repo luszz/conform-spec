@@ -1,7 +1,7 @@
 module.exports = {
-  plugins: ['eslint-plugin-harmony'],
+  plugins: ['eslint-plugin-conform'],
   rules: {
-    'eslint-plugin-harmony/no-http-url': 'warn',
-    'eslint-plugin-harmony/no-secret-info': 'error',
+    'eslint-plugin-conform/no-http-url': 'warn',
+    'eslint-plugin-conform/no-secret-info': 'error',
   },
 };

@@ -12,7 +12,7 @@ function isObject(obj) {
 }
 
 describe('Validate TS configs', () => {
-  it('Validate eslint-config-harmony/typescript', async () => {
+  it('Validate eslint-config-conform/typescript', async () => {
     const configPath = './typescript/index.js';
     const filePath = path.join(__dirname, './fixtures/ts.ts');
 
@@ -58,7 +58,7 @@ describe('Validate TS configs', () => {
     assert.ok(reports2.errorCount !== 0 || reports2.warnCount !== 0);
   });
 
-  it('Validate eslint-config-harmony/typescript/vue3', async () => {
+  it('Validate eslint-config-conform/typescript/vue3', async () => {
     const configPath = './typescript/vue3.js';
     const filePath = path.join(__dirname, './fixtures/ts-vue3.vue');
 
@@ -97,7 +97,7 @@ describe('Validate TS configs', () => {
     assert.notEqual(errorReportedByTSPlugin.length, 1);
   });
 
-  it('Validate eslint-config-harmony/typescript/node', async () => {
+  it('Validate eslint-config-conform/typescript/node', async () => {
     const configPath = './typescript/node.js';
     const filePath = path.join(__dirname, './fixtures/ts-node.ts');
 

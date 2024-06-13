@@ -1,4 +1,4 @@
-# harmony-spec
+# conform-spec
 
 前端编码规范工程化
 
@@ -22,15 +22,15 @@
 
 | 规范                                                              | Lint 工具                                                      | npm 包                                                                                 |
 | ----------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                  | [eslint-config-harmony](https://www.npmjs.com/package/eslint-config-harmony)             |
-| CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                             | [stylelint-config-harmony](https://www.npmjs.com/package/stylelint-config-harmony)       |
-| Git 规范                                                          | [commitlint](https://commitlint.js.org/#/)                     | [commitlint-config-harmony](https://www.npmjs.com/package/commitlint-config-harmony)     |
-| 文档规范                                                          | [markdownlint](https://github.com/DavidAnson/markdownlint)     | [markdownlint-config-harmony](https://www.npmjs.com/package/markdownlint-config-harmony) |
-| Eslint 插件                                                       | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [eslint-plugin-harmony](https://www.npmjs.com/package/eslint-plugin-harmony)             |
+| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                  | [eslint-config-conform](https://www.npmjs.com/package/eslint-config-conform)             |
+| CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                             | [stylelint-config-conform](https://www.npmjs.com/package/stylelint-config-conform)       |
+| Git 规范                                                          | [commitlint](https://commitlint.js.org/#/)                     | [commitlint-config-conform](https://www.npmjs.com/package/commitlint-config-conform)     |
+| 文档规范                                                          | [markdownlint](https://github.com/DavidAnson/markdownlint)     | [markdownlint-config-conform](https://www.npmjs.com/package/markdownlint-config-conform) |
+| Eslint 插件                                                       | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [eslint-plugin-conform](https://www.npmjs.com/package/eslint-plugin-conform)             |
 
-[harmony-spec-lint](https://www.npmjs.com/package/harmony-spec-lint) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
+[conform-spec-lint](https://www.npmjs.com/package/conform-spec-lint) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
 
-您可以使用[harmony-spec-lint](https://www.npmjs.com/package/harmony-spec-lint) 方便地为项目接入全部规范。
+您可以使用[conform-spec-lint](https://www.npmjs.com/package/conform-spec-lint) 方便地为项目接入全部规范。
 
 ## 其他
 
@@ -54,7 +54,7 @@ pnpm run changelog
 
 ## :email: 联系
 
-- **前端编码规范工程化** <https://luszz.github.io/harmony-spec/>
-- **GitHub**: <https://github.com/luszz/harmony-spec>
+- **前端编码规范工程化** <https://luszz.github.io/conform-spec/>
+- **GitHub**: <https://github.com/luszz/conform-spec>
 
 </br>

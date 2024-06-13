@@ -1,10 +1,10 @@
 {
-  "name": "eslint-config-harmony",
+  "name": "eslint-config-conform",
   "version": "1.0.0",
-  "description": "harmony JavaScript TypeScript规范",
+  "description": "conform JavaScript TypeScript规范",
   "main": "index.js",
   "keywords": [
-    "harmony",
+    "conform",
     "javaScript",
     "typescript",
     "lint"
@@ -12,14 +12,14 @@
   "scripts": {
     "test": "jest"
   },
-  "homepage": "https://github.com/luszz/harmony-spec#readme",
+  "homepage": "https://github.com/luszz/conform-spec#readme",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luszz/harmony-spec.git"
+    "url": "git+https://github.com/luszz/conform-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/luszz/harmony-spec/issues"
+    "url": "https://github.com/luszz/conform-spec/issues"
   },
   "author": "luszz",
   "peerDependencies": {

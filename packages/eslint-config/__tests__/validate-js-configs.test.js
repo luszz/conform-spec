@@ -12,7 +12,7 @@ function isObject(obj) {
 }
 
 describe('Validate JS configs', () => {
-  test('Validate eslint-config-harmony', async () => {
+  test('Validate eslint-config-conform', async () => {
     const configPath = './index.js';
     const filePath = path.join(__dirname, './fixtures/index.js');
     
@@ -33,7 +33,7 @@ describe('Validate JS configs', () => {
     expect(sumBy(results, 'warningCount')).toBe(1);
   });
 
-  it('Validate eslint-config-harmony/es5', async () => {
+  it('Validate eslint-config-conform/es5', async () => {
     const configPath = './es5.js';
     const filePath = path.join(__dirname, './fixtures/es5.js');
 
@@ -61,7 +61,7 @@ describe('Validate JS configs', () => {
     assert.notEqual(errorReportedByReactPlugin.length, 0);
   });
 
-  it('Validate eslint-config-harmony/vue2', async () => {
+  it('Validate eslint-config-conform/vue2', async () => {
     const configPath = './vue2.js';
     const filePath = path.join(__dirname, './fixtures/vue2.vue');
 
@@ -89,7 +89,7 @@ describe('Validate JS configs', () => {
     assert.notEqual(errorReportedByReactPlugin.length, 0);
   });
 
-  it('Validate eslint-config-harmony/vue3', async () => {
+  it('Validate eslint-config-conform/vue3', async () => {
     const configPath = './vue3.js';
     const filePath = path.join(__dirname, './fixtures/vue3.vue');
 
@@ -117,7 +117,7 @@ describe('Validate JS configs', () => {
     assert.notEqual(errorReportedByReactPlugin.length, 0);
   });
 
-  it('Validate eslint-config-harmony/node', async () => {
+  it('Validate eslint-config-conform/node', async () => {
     const configPath = './node.js';
     const filePath = path.join(__dirname, './fixtures/node.js');
 

@@ -1,24 +1,24 @@
 {
-  "name": "stylelint-config-harmony",
+  "name": "stylelint-config-conform",
   "version": "1.0.0",
-  "description": "harmony CSS规范",
+  "description": "conform CSS规范",
   "main": "index.js",
   "keywords": [
-    "harmony",
+    "conform",
     "style",
     "lint"
   ],
   "scripts": {
     "test": "node --test"
   },
-  "homepage": "https://github.com/luszz/harmony-spec#readme",
+  "homepage": "https://github.com/luszz/conform-spec#readme",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luszz/harmony-spec.git"
+    "url": "git+https://github.com/luszz/conform-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/luszz/harmony-spec/issues"
+    "url": "https://github.com/luszz/conform-spec/issues"
   },
   "author": "luszz",
   "peerDependencies": {

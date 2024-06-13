@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Harmony Spec"
+  name: "Conform Spec"
   text: ""
   tagline: 支持一键接入、一键扫描、一键修复、一键升级
   actions:
@@ -15,7 +15,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: 'https://github.com/luszz/harmony-spec'
+      link: 'https://github.com/luszz/conform-spec'
 
 features:
   - title: ESLint
