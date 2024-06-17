@@ -11,9 +11,7 @@ author:
 
 # eslint-config-conform
 
-:::tip
-conform JavaScript TypeScript Node 规范
-:::
+> conform JavaScript TypeScript Node 规范
 
 提供了多套配置文件以支持 `JavaScript`、`TypeScript`、`Vue`、`Node.js` 等多种项目类型。
 
@@ -26,24 +24,23 @@ conform JavaScript TypeScript Node 规范
 - [@babel/core](https://www.npmjs.com/package/@babel/core)@^7.24.5
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser)@^7.24.5
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)@^2.29.1
+- [@stylistic/eslint-plugin](https://eslint.style/packages/default)@^2.1.0
 
 ### 安装
 
 ::: code-group
 
 ```sh [npm]
-$ npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import
+$ npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import @stylistic/eslint-plugin
 ```
 
 ```sh [pnpm]
-$ pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import
+$ pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import @stylistic/eslint-plugin
 ```
 
 ```sh [yarn]
-$ yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import
+$ yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import @stylistic/eslint-plugin
 ```
-
-:::
 
 ### 配置
 
@@ -62,25 +59,25 @@ $ yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plug
 - [@babel/core](https://www.npmjs.com/package/@babel/core)@^7.24.5
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser)@^7.24.5
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)@^2.29.1
-- [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)@^9.26.0
-- [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue)@^9.4.2
+- [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)@^9.4.2
+- [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue)@^9.26.0
+- [@stylistic/eslint-plugin](https://eslint.style/packages/default)@^2.1.0
 
 ### 安装
 
 ::: code-group
 
 ```sh [npm]
-npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue
+npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
 
 ```sh [pnpm]
-pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue
+pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
 
 ```sh [yarn]
-yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue
+yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
-:::
 
 ### 配置
 
@@ -100,24 +97,23 @@ yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser)@^7.24.5
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)@^2.29.1
 - [eslint-config-egg](https://www.npmjs.com/package/eslint-config-egg)@^12.3.1
+- [@stylistic/eslint-plugin](https://eslint.style/packages/default)@^2.1.0
 
 ### 安装
 
 ::: code-group
 
 ```sh [npm]
-npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
+npm i -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg @stylistic/eslint-plugin
 ```
 
 ```sh [pnpm]
-pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
+pnpm add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg @stylistic/eslint-plugin
 ```
 
 ```sh [yarn]
-yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
+yarn add -D eslint-config-conform @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg @stylistic/eslint-plugin
 ```
-
-:::
 
 ### 配置
 
@@ -154,8 +150,6 @@ pnpm add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/e
 yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript
 ```
 
-:::
-
 ### 配置
 
 ```json
@@ -187,24 +181,23 @@ yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/e
 - [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript)@3.6.1
 - [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)@^9.4.2
 - [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue)@^9.26.0
+- [@stylistic/eslint-plugin](https://eslint.style/packages/default)@^2.1.0
 
 ### 安装
 
 ::: code-group
 
 ```sh [npm]
-npm i -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue
+npm i -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
 
 ```sh [pnpm]
-pnpm add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue
+pnpm add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
 
 ```sh [yarn]
-yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue
+yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue @stylistic/eslint-plugin
 ```
-
-:::
 
 ### 配置
 
@@ -225,24 +218,23 @@ yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/e
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)@^2.29.1
 - [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript)@3.6.1
 - [eslint-config-egg](https://www.npmjs.com/package/eslint-config-egg)@^12.3.1
+- [@stylistic/eslint-plugin](https://eslint.style/packages/default)@^2.1.0
 
 ### 安装
 
 ::: code-group
 
 ```sh [npm]
-npm i -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg
+npm i -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg @stylistic/eslint-plugin
 ```
 
 ```sh [pnpm]
-pnpm add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg
+pnpm add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg @stylistic/eslint-plugin
 ```
 
 ```sh [yarn]
-yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg
+yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg @stylistic/eslint-plugin
 ```
-
-:::
 
 ### 配置
 
@@ -258,7 +250,6 @@ yarn add -D eslint-config-conform @typescript-eslint/parser @typescript-eslint/e
 
 ### 安装
 
-
 ::: code-group
 
 ```sh [npm]
@@ -272,8 +263,6 @@ pnpm add --save-dev eslint-config-prettier eslint-plugin-prettier
 ```sh [yarn]
 yarn add --save-dev eslint-config-prettier eslint-plugin-prettier
 ```
-
-:::
 
 ### 配置
 
