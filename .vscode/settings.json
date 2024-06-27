@@ -1,21 +1,43 @@
 {
   "cSpell.words": [
+    "ACMR",
+    "autofix",
     "camelcase",
     "commitlint",
     "conventionalcommits",
+    "copyfiles",
+    "execa",
     "IIFEs",
     "linebreak",
+    "lintignore",
     "luszz",
     "nonwords",
     "plusplus",
     "proptypes",
     "Scully",
     "stylelint",
+    "stylelintignore",
+    "stylelintrc",
     "Taobao",
     "typeof",
     "unspaced",
     "vitepress",
     "zzlus",
     "zzusl"
-  ]
+  ],
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.workingDirectories": ["src"]
 }
