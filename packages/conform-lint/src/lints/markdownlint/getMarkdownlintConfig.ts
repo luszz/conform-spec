@@ -1,16 +1,15 @@
-import markdownLint from 'markdownlint';
-import markdownLintConfig from 'markdownlint-config-conform';
-import { ScanOptions, Config } from '../../type';
 import path from 'path';
 import glob from 'glob';
+import markdownLint from 'markdownlint';
+import markdownLintConfig from 'markdownlint-config-conform';
+import type { ScanOptions, PKG, Config } from '../../types';
 
 type LintOptions = markdownLint.Options & { fix?: boolean };
 
 /**
  * 获取 Markdownlint 配置
  */
-
-export function getMarkdownlintConfig(opts: ScanOptions, config: Config): LintOptions {
+export function getMarkdownlintConfig(opts: ScanOptions, pkg: PKG, config: Config): LintOptions {
   const { cwd } = opts;
   const lintConfig: LintOptions = {
     fix: Boolean(opts.fix),
@@ -23,7 +22,7 @@ export function getMarkdownlintConfig(opts: ScanOptions, config: Config): LintOp
   } else {
     const lintConfigFiles = glob.sync('.markdownlint(.@(yaml|yml|json))', { cwd });
     if (lintConfigFiles.length === 0) {
-      lintConfig.config = markdownLintConfig as markdownLint.Options;
+      lintConfig.config = markdownLintConfig as any;
     } else {
       lintConfig.config = markdownLint.readConfigSync(path.resolve(cwd, lintConfigFiles[0]));
     }

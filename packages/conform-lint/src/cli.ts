@@ -1,19 +1,20 @@
-import glob from 'glob';
+#!/usr/bin/env node
 import path from 'path';
 import fs from 'fs-extra';
-import { execSync } from 'child_process';
-import npmType from './utils/npm-type';
-import log from './utils/log';
-import spawn from 'cross-spawn';
-import { program } from 'commander';
-import { PKG_NAME, PKG_VERSION } from './utils/constants';
-import generateTemplate from './utils/generate-template';
-import init from './actions/init';
-import update from './actions/update';
-import { getCommitFiles, getAmendFiles } from './utils/git';
 import ora from 'ora';
-import printReport from './utils/print-report';
+import glob from 'glob';
+import { program } from 'commander';
+import spawn from 'cross-spawn';
+import { execSync } from 'child_process';
+import init from './actions/init';
 import scan from './actions/scan';
+import update from './actions/update';
+import log from './utils/log';
+import printReport from './utils/print-report';
+import npmType from './utils/npm-type';
+import { getCommitFiles, getAmendFiles } from './utils/git';
+import generateTemplate from './utils/generate-template';
+import { PKG_NAME, PKG_VERSION } from './utils/constants';
 
 const cwd = process.cwd();
 
@@ -26,7 +27,6 @@ const installDepsIfThereNo = async () => {
     glob.sync('.stylelintrc?(.@(js|yaml|yml|json))', { cwd }),
     glob.sync('.markdownlint(.@(yaml|yml|json))', { cwd }),
   );
-
   const nodeModulesPath = path.resolve(cwd, 'node_modules');
 
   if (!fs.existsSync(nodeModulesPath) && lintConfigFiles.length > 0) {
@@ -60,12 +60,12 @@ program
 
 program
   .command('scan')
-  .description('一键扫描: 对项目进行代码规范问题扫描')
-  .option('-q, --quiet,', '仅报告错误信息 - 默认: false')
+  .description('一键扫描：对项目进行代码规范问题扫描')
+  .option('-q, --quiet', '仅报告错误信息 - 默认: false')
   .option('-o, --output-report', '输出扫描出的规范问题日志')
-  .option('-i --include <dstpath>', '指定要进行规范扫描的目录')
+  .option('-i, --include <dirpath>', '指定要进行规范扫描的目录')
   .option('--no-ignore', '忽略 eslint 的 ignore 配置文件和 ignore 规则')
-  .action(async (options) => {
+  .action(async (cmd) => {
     await installDepsIfThereNo();
 
     const checking = ora();
@@ -74,10 +74,10 @@ program
     const { results, errorCount, warningCount, runErrors } = await scan({
       cwd,
       fix: false,
-      include: options.include || cwd,
-      quiet: Boolean(options.quiet),
-      outputReport: Boolean(options.outputReport),
-      ignore: options.ignore,
+      include: cmd.include || cwd,
+      quiet: Boolean(cmd.quiet),
+      outputReport: Boolean(cmd.outputReport),
+      ignore: cmd.ignore, // 对应 --no-ignore
     });
     let type = 'succeed';
     if (runErrors.length > 0 || errorCount > 0) {
@@ -97,9 +97,7 @@ program
   .command('commit-msg-scan')
   .description('commit message 检查: git commit 时对 commit message 进行检查')
   .action(() => {
-    const result = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], {
-      stdio: 'inherit',
-    });
+    const result = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], { stdio: 'inherit' });
 
     if (result.status !== 0) {
       process.exit(result.status);
@@ -109,8 +107,8 @@ program
 program
   .command('commit-file-scan')
   .description('代码提交检查: git commit 时对提交代码进行规范问题扫描')
-  .option('-s, --strict', '严格模式, 对 warn 和 error 问题都卡口, 默认仅对 error 问题卡口')
-  .action(async (options) => {
+  .option('-s, --strict', '严格模式，对 warn 和 error 问题都卡口，默认仅对 error 问题卡口')
+  .action(async (cmd) => {
     await installDepsIfThereNo();
 
     // git add 检查
@@ -123,14 +121,14 @@ program
     const { results, errorCount, warningCount } = await scan({
       cwd,
       include: cwd,
-      quiet: !options.strict,
+      quiet: !cmd.strict,
       files: await getCommitFiles(),
     });
 
-    if (errorCount > 0 || (options.strict && warningCount > 0)) {
+    if (errorCount > 0 || (cmd.strict && warningCount > 0)) {
       checking.fail();
-      printReport(results, true);
-      process.exit(1);
+      printReport(results, false);
+      process.exitCode = 1;
     } else {
       checking.succeed();
     }
@@ -138,8 +136,8 @@ program
 
 program
   .command('fix')
-  .description('一键修复: 自动修复项目的代码规范扫描问题')
-  .option('-i --include <dstpath>', '指定要进行修复扫描的目录')
+  .description('一键修复：自动修复项目的代码规范扫描问题')
+  .option('-i, --include <dirpath>', '指定要进行修复扫描的目录')
   .option('--no-ignore', '忽略 eslint 的 ignore 配置文件和 ignore 规则')
   .action(async (cmd) => {
     await installDepsIfThereNo();
@@ -151,11 +149,11 @@ program
       cwd,
       fix: true,
       include: cmd.include || cwd,
-      ignore: cmd.ignore,
+      ignore: cmd.ignore, // 对应 --no-ignore
     });
 
     checking.succeed();
-    if (results.length > 0) printReport(results, false);
+    if (results.length > 0) printReport(results, true);
   });
 
 program

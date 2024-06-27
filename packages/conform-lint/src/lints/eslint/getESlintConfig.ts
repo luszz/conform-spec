@@ -1,15 +1,15 @@
 import { ESLint } from 'eslint';
-import { Config, PKG, ScanOptions } from '../../type';
-import { ESLINT_FILE_EXT } from '../../utils/constants';
-import { glob } from 'fast-glob';
-import path from 'path';
 import fs from 'fs-extra';
-import { getESLintConfigType } from './getESlintConfigType';
+import glob from 'glob';
+import path from 'path';
+import type { Config, PKG, ScanOptions } from '../../types';
+import { ESLINT_FILE_EXT } from '../../utils/constants';
+import { getESLintConfigType } from './getESLintConfigType';
 
 /**
  * 获取 ESLint 配置
  */
-export function getESlintConfig(opts: ScanOptions, pkg: PKG, config: Config): ESLint.Options {
+export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ESLint.Options {
   const { cwd, fix, ignore } = opts;
   const lintConfig: ESLint.Options = {
     cwd,
@@ -20,8 +20,10 @@ export function getESlintConfig(opts: ScanOptions, pkg: PKG, config: Config): ES
   };
 
   if (config.eslintOptions) {
+    // 若用户传入了 eslintOptions，则用用户的
     Object.assign(lintConfig, config.eslintOptions);
   } else {
+    // 根据扫描目录下有无lintrc文件，若无则使用默认的 lint 配置
     const lintConfigFiles = glob.sync('.eslintrc?(.@(js|yaml|yml|json))', { cwd });
     if (lintConfigFiles.length === 0 && !pkg.eslintConfig) {
       lintConfig.resolvePluginsRelativeTo = path.resolve(__dirname, '../../');

@@ -1,16 +1,16 @@
-import { join } from 'path';
 import fg from 'fast-glob';
-import prettier from 'prettier';
 import { readFile, writeFile } from 'fs-extra';
-import type { ScanOptions } from '../../type';
+import { extname, join } from 'path';
+import prettier from 'prettier';
+import { ScanOptions } from '../../types';
 import { PRETTIER_FILE_EXT, PRETTIER_IGNORE_PATTERN } from '../../utils/constants';
 
-export type DoPrettierOptions = ScanOptions;
+export interface DoPrettierOptions extends ScanOptions {}
 
 export async function doPrettier(options: DoPrettierOptions) {
   let files: string[] = [];
   if (options.files) {
-    files = options.files.filter((name) => PRETTIER_FILE_EXT.includes(name));
+    files = options.files.filter((name) => PRETTIER_FILE_EXT.includes(extname(name)));
   } else {
     const pattern = join(
       options.include,

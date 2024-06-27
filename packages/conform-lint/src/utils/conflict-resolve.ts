@@ -2,10 +2,9 @@ import path from 'path';
 import fs from 'fs-extra';
 import glob from 'glob';
 import inquirer from 'inquirer';
-import { PKG } from '../type';
-import log from '../utils/log';
+import log from './log';
 import { PKG_NAME } from './constants';
-import { isUndefined } from 'lodash';
+import type { PKG } from '../types';
 
 // 精确移除依赖
 const packageNamesToRemove = [
@@ -70,7 +69,6 @@ export default async (cwd: string, rewriteConfig?: boolean) => {
       packageNamesToRemove.includes(name) ||
       packagePrefixesToRemove.some((prefix) => name.startsWith(prefix)),
   );
-
   const uselessConfig = checkUselessConfig(cwd);
   const reWriteConfig = checkReWriteConfig(cwd);
   const willChangeCount = willRemovePackage.length + uselessConfig.length + reWriteConfig.length;
@@ -78,33 +76,33 @@ export default async (cwd: string, rewriteConfig?: boolean) => {
   // 提示是否移除原配置
   if (willChangeCount > 0) {
     log.warn(`检测到项目中存在可能与 ${PKG_NAME} 冲突的依赖和配置，为保证正常运行将`);
-  }
 
-  if (willRemovePackage.length > 0) {
-    log.warn('删除以下依赖：');
-    log.warn(JSON.stringify(willRemovePackage, null, 2));
-  }
+    if (willRemovePackage.length > 0) {
+      log.warn('删除以下依赖：');
+      log.warn(JSON.stringify(willRemovePackage, null, 2));
+    }
 
-  if (uselessConfig.length > 0) {
-    log.warn('删除以下配置文件：');
-    log.warn(JSON.stringify(uselessConfig, null, 2));
-  }
+    if (uselessConfig.length > 0) {
+      log.warn('删除以下配置文件：');
+      log.warn(JSON.stringify(uselessConfig, null, 2));
+    }
 
-  if (reWriteConfig.length > 0) {
-    log.warn('覆盖以下配置文件：');
-    log.warn(JSON.stringify(reWriteConfig, null, 2));
-  }
+    if (reWriteConfig.length > 0) {
+      log.warn('覆盖以下配置文件：');
+      log.warn(JSON.stringify(reWriteConfig, null, 2));
+    }
 
-  if (isUndefined(rewriteConfig)) {
-    const { isOverWrite } = await inquirer.prompt({
-      type: 'confirm',
-      name: 'isOverWrite',
-      message: '请确认是否继续：',
-    });
+    if (typeof rewriteConfig === 'undefined') {
+      const { isOverWrite } = await inquirer.prompt({
+        type: 'confirm',
+        name: 'isOverWrite',
+        message: '请确认是否继续：',
+      });
 
-    if (!isOverWrite) process.exit(0);
-  } else if (!reWriteConfig) {
-    process.exit(0);
+      if (!isOverWrite) process.exit(0);
+    } else if (!reWriteConfig) {
+      process.exit(0);
+    }
   }
 
   // 删除配置文件

@@ -1,5 +1,5 @@
 import markdownlint from 'markdownlint';
-import type { ScanResult } from '../../type';
+import type { ScanResult } from '../../types';
 
 /**
  * 格式化 markdownlint 输出结果

@@ -1,10 +1,14 @@
-import glob from 'glob';
 import fs from 'fs-extra';
+import glob from 'glob';
 import path from 'path';
-import { PKG, ScanOptions, Config } from '../../type';
+import { LinterOptions } from 'stylelint';
+import type { Config, PKG, ScanOptions } from '../../types';
 import { STYLELINT_IGNORE_PATTERN } from '../../utils/constants';
 
-export function getStylelintConfig(opts: ScanOptions, pkg: PKG, config: Config) {
+/**
+ * 获取 Stylelint 配置
+ */
+export function getStylelintConfig(opts: ScanOptions, pkg: PKG, config: Config): LinterOptions {
   const { cwd, fix } = opts;
   if (config.enableStylelint === false) return {} as any;
 
@@ -14,6 +18,7 @@ export function getStylelintConfig(opts: ScanOptions, pkg: PKG, config: Config) 
   };
 
   if (config.stylelintOptions) {
+    // 若用户传入了 stylelintOptions，则用用户的
     Object.assign(lintConfig, config.stylelintOptions);
   } else {
     // 根据扫描目录下有无lintrc文件，若无则使用默认的 lint 配置
@@ -30,4 +35,6 @@ export function getStylelintConfig(opts: ScanOptions, pkg: PKG, config: Config) 
       lintConfig.ignorePattern = STYLELINT_IGNORE_PATTERN;
     }
   }
+
+  return lintConfig;
 }

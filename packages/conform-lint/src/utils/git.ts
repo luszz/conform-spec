@@ -4,7 +4,7 @@ import execa from 'execa';
  * 获取此次 commit 修改的文件列表
  * @param options
  */
-export const getCommitFiles = async (options: execa.Options = {}) => {
+export const getCommitFiles = async (options: execa.Options = {}): Promise<string[]> => {
   try {
     const { stdout } = await execa(
       'git',
@@ -21,8 +21,9 @@ export const getCommitFiles = async (options: execa.Options = {}) => {
         cwd: options.cwd || process.cwd(),
       },
     );
+
     return stdout ? stdout.split(/\s/).filter(Boolean) : [];
-  } catch (error) {
+  } catch (e) {
     return [];
   }
 };
@@ -47,7 +48,7 @@ export const getAmendFiles = async (options: execa.Options = {}): Promise<string
     );
 
     return stdout;
-  } catch (error) {
+  } catch (e) {
     return '';
   }
 };

@@ -1,14 +1,10 @@
 import { ESLint } from 'eslint';
-import { ScanResult } from '../../type';
+import type { ScanResult } from '../../types';
 
 /**
  * 格式化 ESLint 输出结果
  */
-export function formatESLintResults(
-  results: ESLint.LintResult[],
-  quiet: boolean,
-  eslint: ESLint,
-): ScanResult[] {
+export function formatESLintResults(results: ESLint.LintResult[], quiet: boolean, eslint: ESLint): ScanResult[] {
   const rulesMeta = eslint.getRulesMetaForResults(results);
 
   return results

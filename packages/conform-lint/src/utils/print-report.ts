@@ -1,10 +1,10 @@
 import chalk from 'chalk';
+import table from 'text-table';
 import terminalLink from 'terminal-link';
 import isDocker from 'is-docker';
-import table from 'text-table';
 import stripAnsi from 'strip-ansi';
 import { PKG_NAME, UNICODE } from './constants';
-import { ScanResult } from '../type';
+import type { ScanResult } from '../types';
 
 /**
  * 在控制台打印扫描报告
@@ -30,10 +30,10 @@ export default (results: ScanResult[], fix: boolean): void => {
 
     return [
       '',
-      chalk.dim(`  ${line}:${column}  `),
+      chalk.dim(`${line}:${column}`),
       errored ? chalk.red('error') : chalk.yellow('warning'),
-      text,
       message,
+      text,
     ];
   };
 
@@ -70,10 +70,10 @@ export default (results: ScanResult[], fix: boolean): void => {
   if (!fix && total > 0) {
     output += chalk[summaryColor].bold(
       [
-        `${UNICODE.failure}`,
+        `${UNICODE.failure} `,
         total,
         pluralize(' problem', total),
-        '(',
+        ' (',
         errorCount,
         pluralize(' error', errorCount),
         ', ',
@@ -96,7 +96,7 @@ export default (results: ScanResult[], fix: boolean): void => {
       );
     }
   }
+  if (!fix && total === 0) output = chalk.green.bold(`${UNICODE.success} no problems`);
 
-  if (!fix && total === 0) output = chalk.green.bold(`${UNICODE.success} no problems found!`);
   console.log(chalk.reset(output));
 };

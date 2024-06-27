@@ -1,15 +1,14 @@
-import inquirer from 'inquirer';
 import path from 'path';
 import fs from 'fs-extra';
-import { isBoolean } from 'lodash';
+import inquirer from 'inquirer';
 import spawn from 'cross-spawn';
-import { PKG_NAME, PROJECT_TYPES } from '../utils/constants';
-import { InitOptions, PKG } from '../type';
 import update from './update';
+import npmType from '../utils/npm-type';
 import log from '../utils/log';
 import conflictResolve from '../utils/conflict-resolve';
-import npmType from '../utils/npm-type';
 import generateTemplate from '../utils/generate-template';
+import { PROJECT_TYPES, PKG_NAME } from '../utils/constants';
+import type { InitOptions, PKG } from '../types';
 
 let step = 0;
 
@@ -20,7 +19,7 @@ const chooseEslintType = async (): Promise<string> => {
   const { type } = await inquirer.prompt({
     type: 'list',
     name: 'type',
-    message: `Step ${++step}. 请选择项目的语言（JS/TS）和框架（Vue）类型：`,
+    message: `Step ${++step}. 请选择项目的语言（JS/TS）和框架（React/Vue）类型：`,
     choices: PROJECT_TYPES,
   });
 
@@ -77,16 +76,15 @@ export default async (options: InitOptions) => {
   const disableNpmInstall = options.disableNpmInstall || false;
   const config: Record<string, any> = {};
   const pkgPath = path.resolve(cwd, 'package.json');
-
   let pkg: PKG = fs.readJSONSync(pkgPath);
 
   // 版本检查
   if (!isTest && checkVersionUpdate) {
-    await update();
+    await update(false);
   }
 
   // 初始化 `enableESLint`，默认为 true，无需让用户选择
-  if (isBoolean(options.enableESLint)) {
+  if (typeof options.enableESLint === 'boolean') {
     config.enableESLint = options.enableESLint;
   } else {
     config.enableESLint = true;
@@ -100,21 +98,21 @@ export default async (options: InitOptions) => {
   }
 
   // 初始化 `enableStylelint`
-  if (isBoolean(options.enableStylelint)) {
+  if (typeof options.enableStylelint === 'boolean') {
     config.enableStylelint = options.enableStylelint;
   } else {
     config.enableStylelint = await chooseEnableStylelint(!/node/.test(config.eslintType));
   }
 
   // 初始化 `enableMarkdownlint`
-  if (isBoolean(options.enableMarkdownlint)) {
+  if (typeof options.enableMarkdownlint === 'boolean') {
     config.enableMarkdownlint = options.enableMarkdownlint;
   } else {
     config.enableMarkdownlint = await chooseEnableMarkdownLint();
   }
 
   // 初始化 `enablePrettier`
-  if (isBoolean(options.enablePrettier)) {
+  if (typeof options.enablePrettier === 'boolean') {
     config.enablePrettier = options.enablePrettier;
   } else {
     config.enablePrettier = await chooseEnablePrettier();
@@ -153,9 +151,9 @@ export default async (options: InitOptions) => {
   pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
   pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
-  log.success(`Step ${++step}. 配置 git commit 卡点成功 :D`);
+  log.success(`Step ${step}. 配置 git commit 卡点成功 :D`);
 
-  log.info(`Step ${++step} 写入配置文件`);
+  log.info(`Step ${++step}. 写入配置文件`);
   generateTemplate(cwd, config);
   log.success(`Step ${step}. 写入配置文件成功 :D`);
 

@@ -8,13 +8,13 @@ export default {
     console.log(green(text));
   },
   info(text: string) {
-    console.log(blue(text));
+    console.info(blue(text));
   },
   warn(text: string) {
-    console.log(yellow(text));
+    console.info(yellow(text));
   },
   error(text: string) {
-    console.log(red(text));
+    console.error(red(text));
   },
   result(text: string, pass: boolean) {
     console.info(

@@ -1,18 +1,18 @@
-import { extname } from 'path';
-import { Config, PKG, ScanOptions } from '../../type';
-import { ESLINT_FILE_EXT, ESLINT_IGNORE_PATTERN } from '../../utils/constants';
-import fg from 'fast-glob';
-import { getESlintConfig } from './getESlintConfig';
 import { ESLint } from 'eslint';
+import fg from 'fast-glob';
+import { extname, join } from 'path';
+import { Config, PKG, ScanOptions } from '../../types';
+import { ESLINT_FILE_EXT, ESLINT_IGNORE_PATTERN } from '../../utils/constants';
 import { formatESLintResults } from './formatESLintResults';
+import { getESLintConfig } from './getESLintConfig';
 
-export type DoEslintOptions = ScanOptions & {
+export interface DoESLintOptions extends ScanOptions {
   pkg: PKG;
-  config: Config;
-};
+  config?: Config;
+}
 
-export async function doEslint(options: DoEslintOptions) {
-  let files: string[] = [];
+export async function doESLint(options: DoESLintOptions) {
+  let files: string[];
   if (options.files) {
     files = options.files.filter((name) => ESLINT_FILE_EXT.includes(extname(name)));
   } else {
@@ -22,7 +22,7 @@ export async function doEslint(options: DoEslintOptions) {
     });
   }
 
-  const eslint = new ESLint(getESlintConfig(options, options.pkg, options.config));
+  const eslint = new ESLint(getESLintConfig(options, options.pkg, options.config));
   const reports = await eslint.lintFiles(files);
   if (options.fix) {
     await ESLint.outputFixes(reports);

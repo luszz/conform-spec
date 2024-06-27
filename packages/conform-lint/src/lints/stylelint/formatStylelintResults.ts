@@ -1,12 +1,14 @@
 import { LintResult } from 'stylelint';
-import { ScanResult } from '../../type';
+import type { ScanResult } from '../../types';
 import { getStylelintRuleDocUrl } from './getStylelintDocUrl';
 
+/**
+ * 格式化 Stylelint 输出结果
+ */
 export function formatStylelintResults(results: LintResult[], quiet: boolean): ScanResult[] {
   return results.map(({ source, warnings }) => {
     let errorCount = 0;
     let warningCount = 0;
-
     const messages = warnings
       .filter((item) => !quiet || item.severity === 'error')
       .map((item) => {
@@ -16,7 +18,6 @@ export function formatStylelintResults(results: LintResult[], quiet: boolean): S
         } else {
           warningCount++;
         }
-
         return {
           line,
           column,

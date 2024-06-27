@@ -10,5 +10,5 @@
     "downlevelIteration": true,
     "types": ["node"]
   },
-  "include": ["src", ".eslintrc.js", "test/**/*.js", "jest.config.js", "babel.config.js"]
+  "include": ["src", ".eslintrc.js", "test/**/*.js"]
 }
