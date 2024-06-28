@@ -123,7 +123,7 @@ npm install conform-lint --save
 (await conform) -
   fe -
   lint.init({
-    eslintType: 'react',
+    eslintType: 'vue3',
     enableESLint: true,
     enableStylelint: true,
     enableMarkdownlint: true,
@@ -146,12 +146,11 @@ config 参数如下：
 
 ##### ESLintType
 
-- `default`: JavaScript 项目（未使用 React 和 Vue 的 JS 项目）
-- `react`: JavaScript + React 项目
-- `vue`: JavaScript + Vue 项目
-- `typescript/default`: TypeScript 项目（未使用 React 和 Vue 的 TS 项目）
-- `typescript/react`: TypeScript + React 项目
-- `typescript/vue`: TypeScript + Vue 项目
+- `default`: JavaScript 项目（未使用 Vue 的 JS 项目）
+- `vue2`: JavaScript + Vue 项目
+- `vue3`: JavaScript + Vu3 项目
+- `typescript/default`: TypeScript 项目（未使用 Vue3 的 TS 项目）
+- `typescript/vue3`: TypeScript + Vue3 项目
 - `es5`: ES5 及之前版本的 JavaScript 老项目
 
 ## 配置

@@ -19,7 +19,7 @@ const chooseEslintType = async (): Promise<string> => {
   const { type } = await inquirer.prompt({
     type: 'list',
     name: 'type',
-    message: `Step ${++step}. 请选择项目的语言（JS/TS）和框架（React/Vue）类型：`,
+    message: `Step ${++step}. 请选择项目的语言（Vue）类型：`,
     choices: PROJECT_TYPES,
   });
 
