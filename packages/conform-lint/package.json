@@ -54,7 +54,7 @@
     "ejs": "^3.1.5",
     "eslint": "^8.57.0",
     "eslint-config-egg": "^12.3.1",
-    "eslint-config-conform": "^1.0.0",
+    "eslint-config-conform": "^1.0.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
