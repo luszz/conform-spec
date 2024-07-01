@@ -1,5 +1,11 @@
 # conform-lint
 
+## 1.0.8
+
+### Major Changes
+
+- update @typescript-eslint/parser
+
 ## 1.0.6
 
 ### Patch Changes
